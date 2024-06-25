@@ -18,7 +18,7 @@ public class OrderProduct {
     private Order order;
 
     @ManyToOne
-    @MapsId("product_id")
+    @MapsId("productId")
     @JoinColumn(name="product_id")
     private Product product;
 
