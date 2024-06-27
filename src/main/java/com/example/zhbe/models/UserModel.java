@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Builder
 public class UserModel {
@@ -21,5 +23,9 @@ public class UserModel {
 
     @NotBlank
     private String password;
+
+    private String address;
+
+    private Date registrationDate;
 
 }
