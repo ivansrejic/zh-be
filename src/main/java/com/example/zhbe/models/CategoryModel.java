@@ -1,13 +1,12 @@
 package com.example.zhbe.models;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-public class ProductModel {
+public class CategoryModel {
     private Integer id;
 
     @NotBlank
@@ -15,13 +14,5 @@ public class ProductModel {
 
     @NotBlank
     private String description;
-
-    @NotNull
-    private Double price;
-
-    @NotNull
-    private Integer quantityAvailable;
-
-    private Integer categoryId;
 
 }

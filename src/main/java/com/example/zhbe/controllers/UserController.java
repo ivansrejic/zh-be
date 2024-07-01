@@ -18,12 +18,6 @@ import java.util.List;
 public class UserController {
     private final IUserService userService;
 
-    @GetMapping("name")
-    public String getName()
-    {
-        return "Ivan";
-    }
-
     @GetMapping("all")
     public List<UserModel> getList()
     {
@@ -39,6 +33,7 @@ public class UserController {
     @PostMapping("create-user")
     public ResponseEntity<?> createUser(@RequestBody @Valid UserModel userModel, BindingResult result)
     {
+        if(result.hasErrors()) return new ResponseEntity<>("Not created",HttpStatus.INTERNAL_SERVER_ERROR);
         return ResponseEntity.ok(userService.create(userModel));
     }
 

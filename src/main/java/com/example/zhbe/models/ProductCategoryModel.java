@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class ProductModel {
+public class ProductCategoryModel {
     private Integer id;
 
     @NotBlank
@@ -22,6 +22,6 @@ public class ProductModel {
     @NotNull
     private Integer quantityAvailable;
 
-    private Integer categoryId;
+    private CategoryModel category;
 
 }
