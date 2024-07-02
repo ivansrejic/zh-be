@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-@RequiredArgsConstructor
 public class ProductMapper {
 
     public static Product toEntity(ProductModel productModel,Category category)

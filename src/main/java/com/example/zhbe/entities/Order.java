@@ -32,10 +32,10 @@ public class Order {
     private OrderStatus orderStatus;
 
     @Column(name ="shipping_date")
-    private String shippingDate;
+    private Date shippingDate;
 
     @Column(name = "delivery_date")
-    private String deliveryDate;
+    private Date deliveryDate;
 
     @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
     private List<OrderProduct> orderProducts;
