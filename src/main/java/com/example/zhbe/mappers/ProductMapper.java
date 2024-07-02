@@ -1,20 +1,26 @@
 package com.example.zhbe.mappers;
 
+import com.example.zhbe.entities.Category;
 import com.example.zhbe.entities.Product;
 import com.example.zhbe.models.ProductModel;
+import lombok.RequiredArgsConstructor;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductMapper {
-    public static Product toEntity(ProductModel productModel)
+
+    public static Product toEntity(ProductModel productModel,Category category)
     {
         Product product = new Product();
-        product.setId(product.getId());
-        product.setName(product.getName());
-        product.setDescription(product.getDescription());
-        product.setPrice(product.getPrice());
-        product.setQuantityAvailable(product.getQuantityAvailable());
+        product.setId(productModel.getId());
+        product.setName(productModel.getName());
+        product.setDescription(productModel.getDescription());
+        product.setPrice(productModel.getPrice());
+        product.setQuantityAvailable(productModel.getQuantityAvailable());
+        product.setCategoryId(category);
+
         return product;
     }
 
@@ -26,6 +32,7 @@ public class ProductMapper {
                 .description(entity.getDescription())
                 .price(entity.getPrice())
                 .quantityAvailable(entity.getQuantityAvailable())
+                .categoryId(entity.getCategoryId().getId())
                 .build();
     }
 
@@ -38,4 +45,5 @@ public class ProductMapper {
         }
         return list;
     }
+
 }
